@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class EditMyAcountDetails {
+public class VerifyOrderDetails {
 
 	String url;
 
@@ -21,7 +21,8 @@ public class EditMyAcountDetails {
 		methods.LoginPage.login(userName, password);
 		methods.MyAccountPage.goToMyAccount();
 		utilities.Assertion.verifyAccountPageUrl(url);
-		methods.MyAccountPage.editProfile("Rachit", "Sinha", "8208929221", "19", "08", "1993");
+		methods.MyAccountPage.goToMyOrders();
+		methods.MyAccountPage.viewOrderDetails();
 		methods.Generic_Methods.threadSleep(10000);
 	}
 
